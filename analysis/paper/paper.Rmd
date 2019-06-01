@@ -1,0 +1,372 @@
+---
+title: "How to use replication assignments for teaching integrity in empirical archaeology"
+author:
+  - Ben Marwick, bmarwick@uw.edu
+  - Liying Wang
+  - Ryan Robinson
+  - Hope Loiselle
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+    bookdown::html_document2:
+      fig_caption: yes
+      reference_docx: "../templates/template.docx" # Insert path for the DOCX file
+bibliography: references.bib
+csl: "../templates/journal-of-archaeological-science.csl" # Insert path for the bib-style
+abstract: |
+  Text of abstract
+keywords: |
+  keyword 1; keyword 2; keyword 3
+highlights: |
+  These are the highlights. 
+---
+
+
+```{r, setup, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  echo = FALSE,
+  comment = "#>",
+  fig.path = "../figures/"
+)
+```
+
+```{r setup2, eval = FALSE}
+# devtools::install_github("ekothe/rmdrive")
+library(rmdrive)
+
+# get text from google doc into Rmd
+download_rmd(file = "paper",  # do not include the .Rmd 
+             gfile = "Paper: Replication projects for teaching integrity in empirical archaeology")  # name of google doc file
+
+# push updates from Rmd to google doc
+update_rmd(file = "analysis/paper/paper",    # do not include the .Rmd 
+           gfile = "Paper: Replication projects for teaching integrity in empirical archaeology")  # name of google doc file
+
+```
+
+## Introduction
+
+In many research communities there are changes underway that promote or require high levels of transparency and reproducibility of research. For example... using open source programming language such as R or Python...
+
+Archaeologists are increasingly adopting these practices also. For example… However current norms in teaching archaeology are out of step with these practices. Given shifts in community values, it is important that we prepare our students with the skills necessary to fulfill these expectations of greater transparency and reproducibility in research. Here we propose a new type of assignment, the replication report, to better align the practice of teaching archaeology with the ideals of archaeological practise. The replication report assignment involves students analysing a published report to determine the main claims made by the authors of that report, students obtaining the data used by the authors, and analysing that data to determine if one or more of the authors’ claims are reliable.  
+
+In this paper we describe how to implement a replication report assignment suitable for upper level undergraduates and graduate students in archaeology. Our experience is based on an upper level archaeology class on stone artefact analysis taught at the University of Washington. The class format includes a weekly cycle of lecture, discussion seminar, and hands-on laboratory activities. The assignments include seminar notes, lecture quizzes, laboratory worksheets, and two longer empirical reports. For the term that we report here, the class had 16 students, a typical number for this class, and similar to the usual size of upper-level laboratory classes in the archaeology program at the University of Washington. Here we survey the literature on similar types of assignments in other fields to identify common elements that other fields have identified as important principles and skills. We describe our assignment and discuss student feedback on the our implementation. Finally we offer recommendations for how to use replication reports to teach archaeology students. 
+
+## Background
+
+Definitions of ‘replication’ vary across difference research areas and sometimes confused with ‘reproducibility’. Some examples in different fields… Definitions of reproducibility vs replicability are contested, survey a few and then declare we will use the ones from here: http://sites.nationalacademies.org/sites/reproducibility-in-science/index.htm 
+
+
+What other fields already do this…
+What journals require replication materials? And what exactly do they require?
+What previous examples of replication assignments in other fields? What do they have in common? What are the typical and unusual elements?
+
+
+LY- economics: Ball, R., & Medeiros, N. (2012). Teaching integrity in empirical research: A protocol for documenting data management and analysis. The Journal of Economic Education, 43(2), 182-189.   https://www.tandfonline.com/doi/abs/10.1080/00220485.2012.659647 https://www.bitss.org/wp-content/uploads/2014/06/teaching-integrity-in-empirical-research-required1.pdf
+
+HL- international studies: Janz, N. (2016). Bringing the gold standard into the classroom: replication in university teaching. International Studies Perspectives, 17(4), 392-407. https://doi.org/10.1111/insp.12104  
+
+RR - computer networking: Yan, L., & McKeown, N. (2017). Learning networking by reproducing research results. ACM SIGCOMM Computer Communication Review, 47(2), 19-26. https://ccronline.sigcomm.org/wp-content/uploads/2017/05/acmdl17-97.pdf 
+ 
+LY - neuroscience: Millman, K. J., Brett, M., Barnowski, R., & Poline, J. B. (2018). Teaching computational reproducibility for neuroimaging. Frontiers in neuroscience, 12, 727. https://www.frontiersin.org/articles/10.3389/fnins.2018.00727/full 
+
+
+## Methods
+
+Our replication report assignment consisted of three small, graded activities to scaffold the preparation of the final report. Each step was separated by one week to give students time to work. Submissions for each step were graded as complete/incomplete, with feedback provided individually via the Canvas learning management system, and during class meetings.
+
+For the first step we supplied students with a list of journal articles that included raw data and R code either in supplemental files or deposited on open data repositories. This list is updated regularly, but is not exhaustive and is currently online at https://github.com/benmarwick/ctv-archaeology Working in groups of 3-4 people, students selected a journal article from this list as their target article for this assignment. We encouraged them to choose a target article about a stone artefact analysis that looked interesting to them. We also required students to set up an open communication channel for their group to ensure they had an easy way to discuss their selection of the target article. We used Slack, a free cloud-based web application for team communication. The instructors were members of all the student group channels to give guidance and support good communication habits. Students were required to individually submit the full bibliographic reference for their target article to complete step one.
+
+For step two of the assignment, students were required to discuss in their groups to identify 2-3 key claims made by the authors of their target article. They were told to study the data visualizations in the paper to identify which figures seem to give the best support to the authors' claims. Recreating these 1-2 key visualisations was a key task in the production of the final report. A second task for step two was for students to identify and obtain the raw data files of their target article. The list of articles that the students chose from only included articles for which data were openly available. This removed the need for students to contact authors to request data, which may have added the risk of a long wait, refusal to share, or no reply. To complete step two, each student was required to submit a short statement summarising the 2-3 key claims of their target paper, and the raw data file. 
+
+Step three of the assignment required students to create a file structure on their computer to organise their assignment files, to download an R Markdown file and write a small amount of R code to read in the raw data and explore it with one basic visualisation, unrelated to any in the target article. We prepared an R Markdown file with some basic headings (following the IMRaD or  Introduction-Method-Results-and-Discussion format) and empty code chunks to provide guidance on how many code chunks were expected, and where in the document they should appear. As students wrote their R code and encountered errors, they were encouraged to share screenshots on Slack for the instructors to assist with troubleshooting. After completing this step, the instructor met with each group to review the main claims identified by the students, review the visualisation they had chosen to replicate, and provide guidance on writing the R code to produce the key visualisations.  
+
+The final task was for the students to write their report, and submit a reproducible research compendium. This included three files: (1) their R Markdown document, (2)  the raw data file, and (3) the output document (e.g. Microsoft Word document that is produced when they knit the R Markdown file). Our expectation was that we could create any student’s results by running their submitted R Markdown document and the raw data file to produce the Word document they submitted. The final report was graded with a rubric which was presented to the students at the first step to help set expectations about what the final product should look like.
+
+In the time between students submitting their final report and the grades being released we administered an  survey to obtain feedback anonymously from the students. The purpose of the feedback survey was to collect information about how to improve the assignment for future classes, to understand the students’ experience of the assignment, and what value they perceive in replication skills for archaeology in general, and for them individually. 
+
+## Results
+
+### Observations on the assignment process
+
+The first step, choosing the target article, revealed the need for some intervention from the instructor to guide students to articles that used relatively simple statistical methods. For example, one group initially chose @Breslawski_Etter_Jorgeson_Boulanger_2018 as their target article, but the key claims in this paper depend on multiple comparisons of multilevel regression models. We explained to the students that if they attempted to replicate a key claim of this paper then they would likely be doing substantially more work than other groups in the class. We invited this group to choose a different target article to ensure a more comparable experience, which they accepted. The statistical backgrounds of our students was highly diverse, so we could not expect students to be very discerning about the statistical complexity of the methods in the articles on the list of potential target articles. As a consequence, we were prepared to intervene to guide their selection of a paper that we could be sure they could successfully replicate, given the time available. 
+
+The second step was mostly straightforward, with students engaging in discussion in class and on Slack to identify the 2-3 key claims of their target paper, and identify the data visualisation that provided the most relevant support to one or more of those claims. Identifying the data files was less straightforward, with about one third of students failing to correctly identify the data files accompanying their target article. We attribute this to the relatively low level of familiarity of the students in working with raw data, so they are not sure when they are looking at it, and the high degree of variability in how the target article authors make their data open. Some authors include their data as a file in the supplementary information attached to the article, while others deposit their files on an open data repository such as osf.io or figshare.com, and then cite the DOI to the files in their article. Where the data files were nested in several layers of folders, some students struggled to find them. 
+
+The ability to easily share screenshots on Slack was important to the success of the third step. Our intention was that two lab classes earlier in the term that introduced students to some methods for data visualization using R would provide the foundation for succeeding in this step. However, we found that for some students this was not sufficient practice, and substantial instructor guidance was required to help them complete this step. At the completion of this step, the instructor met one on one with each group to check how successful they were producing a basic visualization using data from the target article, and to discuss the group's strategy to complete the report. This was the most time-consuming aspect of the assignment for the instructor, holding a one hour meeting with each of the five groups. 
+
+## Analysis of the students' anonymous feedback
+
+Our course had no prerequisites, so we assumed no prior knowledge of R among the students, and were prepared to teach them as complete novices. We were also prepared for students to have no prior experience with replication report assignments. Other courses in our program at UW do not include this kind of assignment, and they are not common in other programs, to the best of our knowledge. We posted to the Society of American Archaeology Teaching Archaeology Interest Group to ask for examples of replication reports used in teaching archaeology, and received no replies. 
+
+
+```{r}
+library(tidyverse)
+feedback <- read_csv(here::here("analysis/data/raw_data/Replication report feedback Survey Student Analysis Report.csv"))
+
+```
+
+
+describe results of follow-up survey: https://canvas.uw.edu/courses/1272207/quizzes/1134059/statistics
+
+
+
+
+Discussion and conclusion
+
+
+Recommendations… future plans
+
+
+
+
+Table and Figures:
+
+
+Survey of replication report assignments in other fields
+Instructions to students
+Grading rubric
+R Markdown template snippet 
+Feedback survey facet plot
+
+
+<!-- The following line inserts a page break when the output is MS Word. For page breaks in PDF, use \newpage on its own line.  -->
+##### pagebreak
+
+# References 
+<!-- The following line ensures the references appear here for the MS Word or HTML output files, rather than right at the end of the document (this will not work for PDF files):  -->
+<div id="refs"></div>
+
+##### pagebreak
+
+### Colophon
+
+This report was generated on `r Sys.time()` using the following computational environment and dependencies: 
+
+```{r colophon, cache = FALSE}
+# which R packages and versions?
+devtools::session_info()
+```
+
+The current Git commit details are:
+
+```{r}
+# what commit is this file at? 
+git2r::repository(here::here())
+```
+
+
+
+________________
+
+
+
+
+Notes:
+
+
+Target journal: Advances in Archaeological Practice - how to section 3500 words “clear, concise, step-by-step guidelines for successfully completing tasks that are or are becoming common practice”
+
+
+Key papers to read and cite:
+
+
+Ball, R., & Medeiros, N. (2012). Teaching integrity in empirical research: A protocol for documenting data management and analysis. The Journal of Economic Education, 43(2), 182-189. https://www.bitss.org/wp-content/uploads/2014/06/teaching-integrity-in-empirical-research-required1.pdf
+
+
+Toelch, U., & Ostwald, D. (2018). Digital open science—Teaching digital tools for reproducible and transparent research. PLoS biology, 16(7), e2006022. https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2006022
+
+
+Medeiros, N., & Ball, R. J. (2017). Teaching Integrity in Empirical Economics: The Pedagogy of Reproducible Science in Undergraduate Education. https://scholarship.haverford.edu/cgi/viewcontent.cgi?article=1189&context=economics_facpubs
+
+
+Hicks, S. C., & Irizarry, R. A. (2018). A guide to teaching data science. The American Statistician, 72(4), 382-391.
+
+
+Janz, N. (2016). Bringing the gold standard into the classroom: replication in university teaching. International Studies Perspectives, 17(4), 392-407. https://doi.org/10.1111/insp.12104 
+
+
+Jern, A. (2018). A preliminary study of the educational benefits of conducting replications in the classroom. Scholarship of Teaching and Learning in Psychology, 4(1), 64.
+
+
+Çetinkaya-Rundel, M., & Rundel, C. (2018). Infrastructure and tools for teaching computing throughout the statistical curriculum. The American Statistician, 72(1), 58-65.
+
+
+Yan, L., & McKeown, N. (2017). Learning networking by reproducing research results. ACM SIGCOMM Computer Communication Review, 47(2), 19-26. https://ccronline.sigcomm.org/wp-content/uploads/2017/05/acmdl17-97.pdf
+
+
+Millman, K. J., Brett, M., Barnowski, R., & Poline, J. B. (2018). Teaching computational reproducibility for neuroimaging. Frontiers in neuroscience, 12, 727. https://www.frontiersin.org/articles/10.3389/fnins.2018.00727/full
+
+
+Wessa, P. (2009). How Reproducible Research Leads to Non-Rote Learning within Socially Constructivist Statistics Education. Electronic Journal of e-Learning, 7(2), 173-182.
+
+
+
+
+https://politicalsciencereplication.wordpress.com/2014/04/02/reproducibility-pioneers-political-scientists-assigning-replications-to-students/
+
+
+https://www.washingtonpost.com/news/monkey-cage/wp/2014/02/12/replication-in-political-science-graduate-courses-an-untapped-resource/?noredirect=on&utm_term=.a557ce616b59
+
+
+https://docs.google.com/forms/d/e/1FAIpQLSeRk7_4Rrzb3DafYGD4NYFjlNJ1rct50iPzzsEuxk6kiID-ag/viewform
+
+
+Apply for Sloan foundation for a survey and study of data availability https://sloan.org/programs/digital-technology/scholarly-communication https://sloan.org/grants/apply#tab-letters-of-inquiry
+________________
+
+
+For each case study of a class that uses a replication assignment, we want to know
+
+
+Variable
+	Ball and Medeiros (2012)
+	Ball (2018)
+	Janz 2016
+	Millman et al.(2018) 
+	Yan & McKeown 2017
+	etc
+	How long (year/term/week)?
+	A term
+	
+
+	8 weeks
+	fall semester, 17 weeks 
+	Three weeks
+	
+
+	How many students?
+	NA
+	
+
+	~15
+	
+
+	200 students over 5 years
+	
+
+	Group or individual?
+	individual
+	
+
+	individual
+	group
+	In pairs
+	
+
+	Main software tool (R/Python/??)?
+	Stata
+	
+
+	R
+	Python
+	Amazon Web Services EC2
+	
+
+	Using Markdown/LaTeX/??
+	NA
+	R Markdown
+	NA
+	Markdown
+	NA
+	
+
+	Using Git/GitHub or not?
+	NA
+	
+
+	NA
+	Git and GitHub
+	NA
+	
+
+	Using CI (e.g. Travis) or not?
+	NA
+	
+
+	NA
+	Travis CI, Circle CI, and Appveyor
+	No
+	
+
+	In class presentation or not?
+	NA
+	
+
+	Yes
+	Yes
+	Yes
+	
+
+	Peer review by other students or not?
+	NA
+	
+
+	Yes
+	Yes
+	Yes
+	
+
+	Students contact original study authors or not?
+	NA
+	
+
+	Yes
+	
+
+	Yes
+	
+
+	Public posting of results by students (e.g. blog, osf.io, other repository) or not?
+	Yes, Haverford College Library
+	
+
+	Yes
+	
+
+	Yes
+	
+
+	
+
+
+
+________________
+
+
+Notes on the background readings
+
+
+Ball and Medeiros (2012) 
+
+
+To achieve the goal of fostering and teaching reproducible research, Ball and Medeiros (2012) developed a protocol for documenting statistical analyses for economics undergraduates to use for their empirical research projects. Instead of partial replication for final results, their 'soup to nut' approach suggests that the standards of replicability must contain four elements, including raw data files, associated metadata, all commands of data processing and analysis, and public availability. This approach establishes norms for complete documentation of empirical research to ensure researchers could successfully reproduce the results by reducing difficulties encountered during replication due to insufficient and partial sharing of data and analytical processes. Moreover, the transparency and reproducible of data bring important pedagogical benefits for students at all stages of completing their projects. Command files enable students to work with the data more efficient and have better data management by keeping track of each step they have done, and the most importantly, complete documentation of research helps students to take responsibility and accountability for their work.  
+
+
+Janz, Nicole. 2016. “Bringing the Gold Standard into the Classroom: Replication in University Teaching.” International Studies Perspectives 17: 392-407. 
+·     Janz argues for bringing replication assignments into the graduate teaching program of political science
+·     These assignments would do well in methods classes both to train in methods and to teach how to make work reproducible
+·     In some courses for younger students, a duplication may be more beneficial, in upper level classes, a replication where original work is tested, plus new analyses or data can be added and potentially published
+·     Replication studies allow a student to learn with original data, including bugs and flaws and to follow along the logic of the author
+·     Teaches students how to make their own work reproducible in the future
+·     Goes beyond literature review in helping students understand the field
+·     This article addresses some criticisms as well: this does not promote error-hunting, and in fact, it was better for students when there were no errors, it does not hurt the reputation of other scientists, their work should be correct in the first place
+·     Her class was interdisciplinary which she found very valuable for idea sharing, but difficult because people came in with different skill levels
+
+
+Yan & McKeown (2017)
+* The authors argue that replication assignments in graduate level courses provide more qualitative learning, inspire future research, and improve the networking community
+* Networking graduate students at Stanford learn in a unique top-down manner that encourages them to learn the deeper mechanisms of the Internet
+* Building from that approach, they were asked to create their own projects -- but these were lacking due to the time constraints of a term and overly ambitious projects
+* Instead, students asked to replicate "classic" netowrking papers
+* 200 students over 5 years (2012-2017), 40 unique papers reproduced & projects published on course blog
+* Work emulated in Mininet or Mahimahi (or another emulator if the original authors did so)
+* Students who fail to correctly replicate results are still considered successful if their results resemble the general shape of the original, or if they are able to reflect and identify their own mistakes
+* The "large majority" finished their projects by correctly replicating the original results
+* Peer review and peer replication: pairs will end the assignment by reproducing another pair's replication
+* Primary reason for the project is unique educational and experiential value
+* Recreating the experiment is time consuming but very fulfulling. Students learned the paper much better by immersing themselves in it
+* Unexpectedly, this project contributes to networking community as students verify work or expose inconsistencies 
+* Students acquire new professional skills that they otherwise would not have

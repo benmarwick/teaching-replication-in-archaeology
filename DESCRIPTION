@@ -12,3 +12,5 @@ ByteCompile: true
 Encoding: UTF-8
 LazyData: true
 Imports: bookdown
+URL: https://github.com/benmarwick/replicationteachingarchaeology
+BugReports: https://github.com/benmarwick/replicationteachingarchaeology/issues

@@ -102,42 +102,7 @@ The ability to easily share screenshots on Slack was important to the success of
 Our course had no prerequisites, so we assumed no prior knowledge of R among the students, and were prepared to teach them as complete novices. We were also prepared for students to have no prior experience with replication report assignments. Other courses in our program at UW do not include this kind of assignment, and they are not common in other programs, to the best of our knowledge. We posted to the Society of American Archaeology Teaching Archaeology Interest Group to ask for examples of replication reports used in teaching archaeology, and received no replies. 
 
 
-```{r feedback-data-prep}
-library(tidyverse)
-feedback <- read_csv(here::here("analysis/data/raw_data/Replication report feedback Survey Student Analysis Report.csv"))
 
-# tidy the variable names
-feedback <- 
-  feedback %>% 
-  rename_all(list(~str_squish(str_remove(., "\\d*:"))))
-
-# extract yes/no questions
-feedback_yn <- 
-  feedback %>% 
-  select(6, 8)
-
-# extract likert-scale questions
-feedback_likert <- 
-  feedback %>% 
-  select(seq(10, 19, 2)) %>% 
-  mutate_all(as.factor)  %>% 
-  mutate_all(tolower) %>% 
-  as.data.frame()
-```
-
-
-```{r likert-plot}
-mylevels <- c('strongly disagree', 'disagree', 'neutral', 'agree', 'strongly agree')
-
-# Here we will recode each factor and explicitly set the levels
-for(i in seq_along(feedback_likert)) {
-	feedback_likert[,i] <- factor(feedback_likert[,i], levels=mylevels)
-}
-
-require(likert)
-feedback_likert_out <- likert(feedback_likert)
-plot(feedback_likert_out, wrap = 30)
-```
 
 
 describe results of follow-up survey: https://canvas.uw.edu/courses/1272207/quizzes/1134059/statistics

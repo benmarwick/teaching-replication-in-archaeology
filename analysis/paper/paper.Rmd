@@ -13,11 +13,7 @@ output:
 bibliography: references.bib
 csl: "../templates/journal-of-archaeological-science.csl" # Insert path for the bib-style
 abstract: |
-  Text of abstract
-keywords: |
-  keyword 1; keyword 2; keyword 3
-highlights: |
-  These are the highlights. 
+  The value of new archaeological knowledge is strongly determined by how credible it is, and a key measure of scientific credibility is how replicable new results are. However, few archaeologists learn the skills necessary to conduct replication as part of their training. This means there is a gap between the ideals of archaeological science, and the skills we teach future researchers. Here we argue for replications as a core type of class assignment in archaeology courses to close this gap and establish a culture of replication and reproducibility. We review replication assignments in other fields, and describe how to implement a replication assignment suitable for many types of archaeology programs. We describe our experience with replication in an upper level undergraduate class on stone artefact analysis. Replication assignments can help archaeology programs give students skills that enable transparent and reproducible research.  
 ---
 
 
@@ -39,7 +35,7 @@ gh repo: https://github.com/benmarwick/replicationteachingarchaeology
 library(rmdrive)
 
 
-# get text from google doc into Rmd
+# get text from google doc into Rmd, make sure we are in the target directory 
 download_rmd(file = "paper",  # do not include the .Rmd 
              gfile = "Paper: Replication projects for teaching integrity in empirical archaeology")  # name of google doc file
 

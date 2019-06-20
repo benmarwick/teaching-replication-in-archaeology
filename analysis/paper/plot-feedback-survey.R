@@ -1,4 +1,6 @@
 
+
+## ---- prepare-the-feedback-data
 library(tidyverse)
 feedback <- read_csv(here::here("analysis/data/raw_data/Replication report feedback Survey Student Analysis Report.csv"))
 
@@ -7,12 +9,12 @@ feedback <-
   feedback %>%
   rename_all(list(~str_squish(str_remove(., "\\d*:"))))
 
-# --- extract-yes-no-questions ---
+# extract-yes-no-questions ---
 feedback_yn <-
   feedback %>%
   select(6, 8)
 
-# --- extract-likert-scale-questions ---
+# extract-likert-scale-questions ---
 feedback_likert <-
   feedback %>%
   select(seq(10, 19, 2)) %>%
@@ -27,7 +29,9 @@ for(i in seq_along(feedback_likert)) {
   feedback_likert[,i] <- factor(feedback_likert[,i], levels=mylevels)
 }
 
-# --- plot-likert ---
+
+## ---- plot-the-feedback-data
+#  plot-likert ---
 require(likert)
 feedback_likert_out <- likert(feedback_likert)
 plot_l <- plot(feedback_likert_out,
@@ -35,7 +39,7 @@ plot_l <- plot(feedback_likert_out,
                legend.position = "top",
                base_size = 10)
 
-# --- plot-y-n
+# plot-y-n
 plot_y <-
 feedback_yn %>%
   gather(variable, value) %>%
@@ -53,20 +57,23 @@ feedback_yn %>%
   theme_minimal(base_size = 10) +
   scale_fill_grey()
 
-# --- combine-plots
+# combine-plots
 library(cowplot)
+feedback_plots <-
 plot_grid(plot_l,
           plot_y,
           ncol =1,
           rel_heights = c(4, 1))
 
-ggsave('analysis/figures/feedback_likert_yn_plot.png',
+ggsave(plot = feedback_plots,
+       here::here('analysis/figures/feedback_likert_yn_plot.png'),
                   height = 8,
                   width = 12)
 
 
-# --- likert-cor
+# likert-cor
 library(corrr)
+feedback_likert_out_plot <-
 feedback_likert_out$results %>%
   gather(variable, value, -Item) %>%
   mutate(Item = str_wrap(Item, 20)) %>%
@@ -76,7 +83,8 @@ feedback_likert_out$results %>%
   rplot() +
   scale_size(range = c(5, 20))
 
-ggsave('analysis/figures/feedback_likert_corr.png',
+ggsave(plot = feedback_likert_out_plot,
+       here::here('analysis/figures/feedback_likert_corr.png'),
        height = 8,
        width = 10)
 

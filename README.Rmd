@@ -16,6 +16,8 @@ Title <- "Title of your paper goes here"
 
 # replicationteachingarchaeology
 
+[![Travis-CI Build Status](https://travis-ci.org/benmarwick/replicationteachingarchaeology.svg?branch=master)](https://travis-ci.org/benmarwick/replicationteachingarchaeology)
+
 This repository contains the data and code for our paper:
 
 > Authors, (YYYY). _`r Title`_. Name of journal/book <https://doi.org/xxx/xxx>

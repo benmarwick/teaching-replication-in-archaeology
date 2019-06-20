@@ -1,11 +1,11 @@
 
-
+## ---- prepare-the-rubric-data
 library(tidyverse)
 library(ggbeeswarm)
 
 #' read in the data
 # what a mess
-grading_rubric <- readxl::read_excel("analysis/data/raw_data/grading-rubric.xlsx")
+grading_rubric <- readxl::read_excel(here::here("analysis/data/raw_data/grading-rubric.xlsx"))
 
 #' clean the data
 criteria <-
@@ -56,7 +56,8 @@ grading_rubric %>%
   gather(student, score, -criteria) %>%
   mutate(prop = map_dbl(score, clean_and_ratio_the_score))
 
-#' Plot the distribution of scores
+## ---- plot-the-rubric-data
+rubric_data_plot <-
 scores %>%
   mutate(criteria = str_wrap((criteria), 40)) %>%
   ggplot(aes(reorder(criteria, prop),
@@ -68,12 +69,13 @@ scores %>%
                shape="\U007C",
                size=15,
                colour="red") +
-  labs(y = "Proportion of full score of that criterion",
+  labs(y = "Proportion of full score of each criterion",
        x = "Criterion") +
   theme_minimal(base_size = 12) +
   coord_flip()
 
-ggsave('analysis/figures/rubric_score_distribution.png',
+ggsave(plot = rubric_data_plot,
+       here::here('analysis/figures/rubric_score_distribution.png'),
        height = 8,
        width = 8)
 

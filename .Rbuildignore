@@ -7,3 +7,5 @@
 ^CONTRIBUTING\.md$
 analysis
 ^\.httr-oauth$
+^Dockerfile$
+^\.travis\.yml$

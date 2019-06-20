@@ -9,6 +9,8 @@
 Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/benmarwick/replicationteachingarchaeology/master?urlpath=rstudio)
 [![Travis-CI Build
 Status](https://travis-ci.org/benmarwick/replicationteachingarchaeology.svg?branch=master)](https://travis-ci.org/benmarwick/replicationteachingarchaeology)
+[![ORCiD](https://img.shields.io/badge/ORCiD-0000--0001--7879--4531-green.svg)](http://orcid.org/0000-0001-7879-4531)
+
 <!-- badges: end -->
 
 This repository contains the data and code for our paper:
@@ -20,7 +22,7 @@ This repository contains the data and code for our paper:
 
 Our pre-print is online here:
 
-> Authors, (YYYY). *How to use replication assignments for teaching
+> Authors, (2019). *How to use replication assignments for teaching
 > integrity in empirical archaeology*. Name of journal/book, Accessed 20
 > Jun 2019. Online at <https://doi.org/10.17605/OSF.IO/DBSW9>
 
@@ -29,17 +31,19 @@ Our pre-print is online here:
 Please cite this compendium as:
 
 > Marwick, B., L. Wang, R. Robinson, H. Loiselle, (2019). *Compendium of
-> R code and data for How to use replication assignments for teaching
-> integrity in empirical archaeology*. Accessed 20 Jun 2019. Online at
+> R code and data for “How to use replication assignments for teaching
+> integrity in empirical archaeology”*. Accessed 20 Jun 2019. Online at
 > <https://doi.org/10.17605/OSF.IO/DBSW9>
 
 ### How to download or install
 
 You can download the compendium as a zip from from this URL:
-</archive/master.zip>
+[master.zip](/archive/master.zip)
 
 Or you can install this compendium as an R package,
-replicationteachingarchaeology, from GitHub with: \#\#\# Licenses
+teachingreplicationinarchaeology, from GitHub with:
+
+### Licenses
 
 **Text and figures :**
 [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)

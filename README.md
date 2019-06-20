@@ -22,9 +22,10 @@ This repository contains the data and code for our paper:
 
 Our pre-print is online here:
 
-> Authors, (2019). *How to use replication assignments for teaching
-> integrity in empirical archaeology*. Name of journal/book, Accessed 20
-> Jun 2019. Online at <https://doi.org/10.17605/OSF.IO/DBSW9>
+> Marwick, B., L. Wang, R. Robinson, H. Loiselle , (2019). *How to use
+> replication assignments for teaching integrity in empirical
+> archaeology*. SocArXiv, Accessed 20 Jun 2019. Online at
+> <https://osf.io/preprints/socarxiv/tsxbv>
 
 ### How to cite
 

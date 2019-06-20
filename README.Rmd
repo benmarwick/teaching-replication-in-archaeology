@@ -29,7 +29,7 @@ This repository contains the data and code for our paper:
 
 Our pre-print is online here:
 
-> Authors, (2019). _`r Title`_. Name of journal/book, Accessed `r format(Sys.Date(), "%d %b %Y")`. Online at <https://doi.org/10.17605/OSF.IO/DBSW9>
+> Marwick, B., L. Wang, R. Robinson, H. Loiselle , (2019). _`r Title`_. SocArXiv, Accessed `r format(Sys.Date(), "%d %b %Y")`. Online at <https://osf.io/preprints/socarxiv/tsxbv>
 
 
 ### How to cite

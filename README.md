@@ -1,26 +1,37 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# replicationteachingarchaeology
+# Teaching replication in archaeology
+
+<!-- badges: start -->
+
+[![Launch Rstudio
+Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/benmarwick/replicationteachingarchaeology/master?urlpath=rstudio)
+[![Travis-CI Build
+Status](https://travis-ci.org/benmarwick/replicationteachingarchaeology.svg?branch=master)](https://travis-ci.org/benmarwick/replicationteachingarchaeology)
+<!-- badges: end -->
 
 This repository contains the data and code for our paper:
 
-> Authors, (YYYY). *Title of your paper goes here*. Name of journal/book
-> <https://doi.org/xxx/xxx>
+> Marwick, B., L. Wang, R. Robinson, H. Loiselle (2019). *How to use
+> replication assignments for teaching integrity in empirical
+> archaeology*. Name of journal/book
+> <https://doi.org/10.17605/OSF.IO/DBSW9>
 
 Our pre-print is online here:
 
-> Authors, (YYYY). *Title of your paper goes here*. Name of
-> journal/book, Accessed 31 May 2019. Online at
-> <https://doi.org/xxx/xxx>
+> Authors, (YYYY). *How to use replication assignments for teaching
+> integrity in empirical archaeology*. Name of journal/book, Accessed 20
+> Jun 2019. Online at <https://doi.org/10.17605/OSF.IO/DBSW9>
 
 ### How to cite
 
 Please cite this compendium as:
 
-> Authors, (2019). *Compendium of R code and data for Title of your
-> paper goes here*. Accessed 31 May 2019. Online at
-> <https://doi.org/xxx/xxx>
+> Marwick, B., L. Wang, R. Robinson, H. Loiselle, (2019). *Compendium of
+> R code and data for How to use replication assignments for teaching
+> integrity in empirical archaeology*. Accessed 20 Jun 2019. Online at
+> <https://doi.org/10.17605/OSF.IO/DBSW9>
 
 ### How to download or install
 

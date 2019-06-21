@@ -125,7 +125,9 @@ include_graphics(here::here("analysis/figures/feedback_likert_yn_plot.png"))
 
 Thirteen out of sixteen students completed an anonymous feedback survey (Figure \@ref(fig:show-plot-feedback)). Only one student had done replication before and two had used R previously for an archaeology assignment. Most students strongly agreed with the statements about having sufficient support and clear instructions. Most students strongly disagreed with the statement, “I am likely to attempt to replicate published research in my future studies and work”. This contrasts with the high proportion of students that agree with the statement “The ability to replicate published research is an important skill for professional archaeologists”. Taken together, these two responses show that while students see the value of replication to archaeology in general, they do not see any specific benefits to doing it themselves. This may reflect a failure of the instructor to communicate the individual benefits of developing skills for replication. It may also reflect uncertainty among the students about their plans for a career in archaeology. Most, but not all, students agreed that the replication assignment helped them to learn more effectively than reading a paper to write a traditional paper.
 
-```{r show-plot-feedback-correlations, fig.cap = "Correlations among feedback items with Likert scale responses. The size of the dot indicates the magnitude of the correlation, and the colour indicates the direction (red is negative, blue is positive). Correlations were computed using Spearman's method."}
+(ref:correlation-caption) Correlations among feedback items with Likert scale responses. The size of the dot indicates the magnitude of the correlation, and the colour indicates the direction (red is negative, blue is positive). Correlations were computed using Spearman's [-@spearman1904proof] method.
+
+```{r show-plot-feedback-correlations, fig.cap = "(ref:correlation-caption)"}
 include_graphics(here::here("analysis/figures/feedback_likert_corr.png"))
 ```
 

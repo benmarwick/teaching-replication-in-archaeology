@@ -8,7 +8,7 @@
 [![Launch Rstudio
 Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/benmarwick/replicationteachingarchaeology/master?urlpath=rstudio)
 [![Travis-CI Build
-Status](https://travis-ci.org/benmarwick/teaching-replication-in-archaeology.svg?branch=master)](https://travis-ci.org/benmarwickteaching-replication-in-archaeology)
+Status](https://travis-ci.org/benmarwick/teaching-replication-in-archaeology.svg?branch=master)](https://travis-ci.org/benmarwick/teaching-replication-in-archaeology)
 [![ORCiD](https://img.shields.io/badge/ORCiD-0000--0001--7879--4531-green.svg)](http://orcid.org/0000-0001-7879-4531)
 
 <!-- badges: end -->

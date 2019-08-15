@@ -353,7 +353,7 @@
   <bibliography subsequent-author-substitute="" entry-spacing="0">
     <sort>
       <key macro="contributors"/>
-      <key variable="issued"/>
+      <key variable="issued" sort="descending"/>
     </sort>
     <layout>
       <group display="block">

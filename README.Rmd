@@ -31,18 +31,30 @@ Our pre-print is online here:
 
 > Marwick, B., L. Wang, R. Robinson, H. Loiselle , (2019). _`r Title`_. SocArXiv, Accessed `r format(Sys.Date(), "%d %b %Y")`. Online at <https://osf.io/preprints/socarxiv/tsxbv>
 
-
 ### How to cite
 
 Please cite this compendium as:
 
 > Marwick, B., L. Wang, R. Robinson, H. Loiselle, (`r format(Sys.Date(), "%Y")`). _Compendium of R code and data for "`r Title`"_. Accessed `r format(Sys.Date(), "%d %b %Y")`. Online at <https://doi.org/10.17605/OSF.IO/DBSW9>
 
-### How to download or install
+### Overview of contents
+
+The **analysis** directory contains:  
+- **paper** has our R Markdown document, paper.Rmd, that contains text and code of our paper. It also has a rendered version, paper.docx, suitable for reading (the code is replaced by figures and tables in this file)    
+- **data** has our raw data files    
+- **figures** has our plots and other illustrations
+
+### How to run, download or install
+
+The simplest way to explore the text, code and data is to click on [binder](https://mybinder.org/v2/gh/benmarwick/replicationteachingarchaeology/master?urlpath=rstudio) to open an instance of RStudio in your browser, which will have the compendium files ready to work with. 
 
 You can download the compendium as a zip from from this URL: [master.zip](/archive/master.zip)
 
 Or you can install this compendium as an R package, teachingreplicationinarchaeology, from GitHub with:
+
+```
+remotes::install_github("benmarwick/teachingreplicationinarchaeology")
+```
 
 
 ### Licenses

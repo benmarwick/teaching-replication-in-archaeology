@@ -24,7 +24,7 @@ Our pre-print is online here:
 
 > Marwick, B., L. Wang, R. Robinson, H. Loiselle , (2019). *How to use
 > replication assignments for teaching integrity in empirical
-> archaeology*. SocArXiv, Accessed 20 Jun 2019. Online at
+> archaeology*. SocArXiv, Accessed 15 Aug 2019. Online at
 > <https://osf.io/preprints/socarxiv/tsxbv>
 
 ### How to cite
@@ -33,16 +33,31 @@ Please cite this compendium as:
 
 > Marwick, B., L. Wang, R. Robinson, H. Loiselle, (2019). *Compendium of
 > R code and data for “How to use replication assignments for teaching
-> integrity in empirical archaeology”*. Accessed 20 Jun 2019. Online at
+> integrity in empirical archaeology”*. Accessed 15 Aug 2019. Online at
 > <https://doi.org/10.17605/OSF.IO/DBSW9>
 
-### How to download or install
+### Overview of contents
+
+The **analysis** directory contains:  
+\- *paper* has our R Markdown document, paper.Rmd, that contains text
+and code of our paper. It also has a rendered version, paper.docx,
+suitable for reading (the code is replaced by figures and tables in this
+file)  
+\- *data* has our raw data files  
+\- *figures* has our plots and other illustrations
+
+### How to run, download or install
+
+The simplest way to explore the
 
 You can download the compendium as a zip from from this URL:
 [master.zip](/archive/master.zip)
 
 Or you can install this compendium as an R package,
-teachingreplicationinarchaeology, from GitHub with:
+teachingreplicationinarchaeology, from GitHub
+    with:
+
+    remotes::install_github("benmarwick/teachingreplicationinarchaeology")
 
 ### Licenses
 

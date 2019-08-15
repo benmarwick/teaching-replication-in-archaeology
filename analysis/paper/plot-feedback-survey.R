@@ -36,8 +36,11 @@ require(likert)
 feedback_likert_out <- likert(feedback_likert)
 plot_l <- plot(feedback_likert_out,
                wrap = 30,
-               legend.position = "top",
-               base_size = 10)
+               text.size = 2,
+               legend.position = "top") +
+  theme(text=element_text(size=4),
+        axis.text=element_text(size=4),
+        legend.text = element_text(size = 5.5))
 
 # plot-y-n
 plot_y <-
@@ -54,7 +57,7 @@ feedback_yn %>%
   labs(x = "",
        y = "Number of responses") +
   coord_flip() +
-  theme_minimal(base_size = 10) +
+  theme_minimal(base_size = 6) +
   scale_fill_grey()
 
 # combine-plots
@@ -67,8 +70,8 @@ plot_grid(plot_l,
 
 ggsave(plot = feedback_plots,
        here::here('analysis/figures/feedback_likert_yn_plot.png'),
-                  height = 8,
-                  width = 12)
+                  width = 5.75,
+       dpi = 300)
 
 
 # likert-cor
@@ -80,13 +83,16 @@ feedback_likert_out$results %>%
   spread(Item, value) %>%
   select(-1) %>%
   correlate(method = "spearman") %>%
+  shave(upper = FALSE) %>%
   rplot() +
-  scale_size(range = c(5, 20))
+  scale_size(range = c(5, 20)) +
+  theme(axis.text=element_text(size=6))
 
 ggsave(plot = feedback_likert_out_plot,
        here::here('analysis/figures/feedback_likert_corr.png'),
-       height = 8,
-       width = 10)
+       width = 5.75,
+       h = 5.75,
+       dpi = 300)
 
 
 

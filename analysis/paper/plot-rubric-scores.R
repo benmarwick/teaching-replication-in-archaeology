@@ -71,13 +71,12 @@ scores %>%
                colour="red") +
   labs(y = "Proportion of full score of each criterion",
        x = "Criterion") +
-  theme_minimal(base_size = 12) +
+  theme_minimal(base_size = 8) +
   coord_flip()
 
 ggsave(plot = rubric_data_plot,
        here::here('analysis/figures/rubric_score_distribution.png'),
-       height = 8,
-       width = 8)
+       width = 5.75)
 
 
 

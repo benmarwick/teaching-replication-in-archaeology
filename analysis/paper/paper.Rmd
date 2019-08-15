@@ -163,7 +163,7 @@ To make it easier to conduct replication assignments with archaeology students i
 
 ## Acknowledgements
 
-Thanks to the students of ARCHY 483 in Spring 2019 for participating in the assignment. 
+Thanks to the students of ARCHY 483 in Spring 2019 for participating in the assignment. Thanks to the peer reviewers for their detailed feedback and suggestions for improvement. 
 
 
 # References 

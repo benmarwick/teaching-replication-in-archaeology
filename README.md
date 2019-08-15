@@ -39,8 +39,6 @@ Please cite this compendium as:
 > integrity in empirical archaeology”*. Accessed 15 Aug 2019. Online at
 > <https://doi.org/10.17605/OSF.IO/DBSW9>
 
-### Overview of contents
-
 ## Contents
 
 The **analysis** directory contains:
@@ -54,7 +52,7 @@ The **analysis** directory contains:
   - [:file\_folder: figures](/analysis/figures): Plots and other
     illustrations
 
-### How to run in your broswer or download and run locally
+## How to run in your broswer or download and run locally
 
 The simplest way to explore the text, code and data is to click on
 [binder](https://mybinder.org/v2/gh/benmarwick/replicationteachingarchaeology/master?urlpath=rstudio)

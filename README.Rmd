@@ -36,8 +36,6 @@ Please cite this compendium as:
 
 > Marwick, B., L. Wang, R. Robinson, H. Loiselle, (`r format(Sys.Date(), "%Y")`). _Compendium of R code and data for "`r Title`"_. Accessed `r format(Sys.Date(), "%d %b %Y")`. Online at <https://doi.org/10.17605/OSF.IO/DBSW9>
 
-### Overview of contents
-
 ## Contents
 
 The **analysis** directory contains:  
@@ -46,7 +44,7 @@ The **analysis** directory contains:
 - [:file_folder: data](/analysis/data): Data used in the analysis.  
 - [:file_folder: figures](/analysis/figures): Plots and other illustrations
 
-### How to run in your broswer or download and run locally
+## How to run in your broswer or download and run locally
 
 The simplest way to explore the text, code and data is to click on [binder](https://mybinder.org/v2/gh/benmarwick/replicationteachingarchaeology/master?urlpath=rstudio) to open an instance of RStudio in your browser, which will have the compendium files ready to work with. Binder uses rocker-project.org Docker images to ensure a consistent and reproducible computational environment. These Docker images can also be used locally.
 

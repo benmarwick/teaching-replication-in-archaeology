@@ -18,10 +18,11 @@ This repository contains the data and code for our paper:
 > [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0001-7879-4531),
 > L. Wang
 > [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0001-9060-2125),
-> R. Robinson, H. Loiselle (2019). *How to use replication assignments
-> for teaching integrity in empirical archaeology*. Submitted to
-> *Advances in Archaeological Practice*
-> <https://doi.org/10.17605/OSF.IO/DBSW9>
+> R. Robinson
+> [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0001-8029-937X),
+> H. Loiselle (2019). *How to use replication assignments for teaching
+> integrity in empirical archaeology*. Submitted to *Advances in
+> Archaeological Practice* <https://doi.org/10.17605/OSF.IO/DBSW9>
 
 Our pre-print is online here:
 

@@ -20,15 +20,17 @@ This repository contains the data and code for our paper:
 > [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0001-9060-2125),
 > R. Robinson
 > [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0001-8029-937X),
-> H. Loiselle (2019). *How to use replication assignments for teaching
-> integrity in empirical archaeology*. Submitted to *Advances in
-> Archaeological Practice* <https://doi.org/10.17605/OSF.IO/DBSW9>
+> H. Loiselle
+> [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-6197-4752)
+> (2019). *How to use replication assignments for teaching integrity in
+> empirical archaeology*. Submitted to *Advances in Archaeological
+> Practice* <https://doi.org/10.17605/OSF.IO/DBSW9>
 
 Our pre-print is online here:
 
 > Marwick, B., L. Wang, R. Robinson, H. Loiselle , (2019). *How to use
 > replication assignments for teaching integrity in empirical
-> archaeology*. SocArXiv, Accessed 15 Aug 2019. Online at
+> archaeology*. SocArXiv, Accessed 16 Aug 2019. Online at
 > <https://osf.io/preprints/socarxiv/tsxbv>
 
 ### How to cite
@@ -37,7 +39,7 @@ Please cite this compendium as:
 
 > Marwick, B., L. Wang, R. Robinson, H. Loiselle, (2019). *Compendium of
 > R code and data for “How to use replication assignments for teaching
-> integrity in empirical archaeology”*. Accessed 15 Aug 2019. Online at
+> integrity in empirical archaeology”*. Accessed 16 Aug 2019. Online at
 > <https://doi.org/10.17605/OSF.IO/DBSW9>
 
 ## Contents

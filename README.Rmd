@@ -24,7 +24,7 @@ Title <- "How to use replication assignments for teaching integrity in empirical
 
 This repository contains the data and code for our paper:
 
-> Marwick, B. [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0001-7879-4531), L. Wang [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0001-9060-2125), R. Robinson [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0001-8029-937X), H. Loiselle (2019). _`r Title`_. Submitted to _Advances in Archaeological Practice_ <https://doi.org/10.17605/OSF.IO/DBSW9>
+> Marwick, B. [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0001-7879-4531), L. Wang [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0001-9060-2125), R. Robinson [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0001-8029-937X), H. Loiselle [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-6197-4752) (2019). _`r Title`_. Submitted to _Advances in Archaeological Practice_ <https://doi.org/10.17605/OSF.IO/DBSW9>
 
 Our pre-print is online here:
 

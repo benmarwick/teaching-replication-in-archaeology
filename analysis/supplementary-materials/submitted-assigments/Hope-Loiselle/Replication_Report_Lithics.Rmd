@@ -1,0 +1,103 @@
+---
+title: "Replication_Report_Lithics"
+output:
+  word_document: default
+  html_document: default
+---
+---
+title: "Spring 2019 ARCHY 483 Replication Report"
+author: "Hope Loiselle"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE, message = FALSE) # this ensures we can see your code in the output
+```
+
+## Introduction 
+This report looks to substantiate the claim made by Marwick (2013) in the paper "Multiple Optima in Hoabinhian flaked stone artefact palaeoeconomics and palaeoecology at two archaeological sites in Northwest Thailand," that the major climate shift between the Pleistocene and the Holocene affected the technological behavior of people living at the sites of Ban Rai and Tham Lod.  
+
+
+This report uses data from two sites in Thailand: Ban Rai and Tham Lod. Ban Rai is a Holocene rockshelter site in a steep valley of the Shan mountain range, dating from about 10,000 BP to 6,000 BP. The site is located in semi-evergreen vegetation and bamboo. Tham Lod is also a rockshelter and dates to the Pleistocene, about 40,000 BP to 10,000 BP. The environment around Tham Lod consists of karst formations and steep, low hills, with semi-evergreen forest (Marwick 2013). Citkament et al. (2015) detail the types of tools that can be found at Tham Lod, including locally sourced cores.  
+
+
+## Methods
+In order to substantiate the claims made by Marwick, data from Ban Rai and Tham Lod was analyzed to determine the median percent of dorsal cortex for each site and the mean proportion of no cortex for each site (following methods of measuring reduction in Marwick 2008b). To determine the median % dorsal cortex, a boxplot was created for each site. To calculate the mean proportion of no cortex found at the site, the data was first grouped by site, excavation layer/unit and the amount of dorsal cortex. Then the proportion of no-cortex to cortex was calculated within each excavation unit. The resulting proportions were graphed for each site using a boxplot. 
+
+
+## Results
+
+
+```{r read-in-the-data}
+suppressPackageStartupMessages(library(tidyverse))
+flakes_TL <- read_csv("Tham_Lod_Area_1_lithics.csv")
+flakes_BR <- read_csv("Ban_Rai_Area_3_lithics.csv")
+```
+
+### Median % Dorsal Cortex
+Many of the artifacts at Ban Rai have 0% dorsal cortex, though in the Marwick paper, this appears more extreme (Fig. 6). Tham Lod, has a median of 20% of dorsal cortex. 
+```
+
+```{r tidy-the-data}
+# dorsal cortex and dorsal scars 
+TL_dorsal <-
+  flakes_TL %>% 
+  select(DORSAL_COR, DORSAL_SCA, SITE, EXCAVATION)
+
+BR_dorsal <-
+  flakes_BR %>% 
+  select(DORSAL_COR, DORSAL_SCA, SITE, EXCAVATION)
+
+TL_BR_dorsal <- bind_rows(TL_dorsal, BR_dorsal)
+```
+
+
+```{r}
+ggplot(TL_BR_dorsal, aes(SITE, DORSAL_COR)) +
+  geom_boxplot()
+
+  
+
+
+```
+
+
+### Mean Proportion of No Cortex
+At Ban Rai, the mean proportion of no cortex found on artifacts was 20% higher than at Tham Lod. This result was slightly different than in the Marwick paper (Fig. 6), though the trend generally matched. 
+```{r}
+
+dorsal_cortex_proportion <- 
+  TL_BR_dorsal %>% 
+  group_by(SITE, EXCAVATION, DORSAL_COR) %>% 
+  tally() %>% 
+  mutate(DORSAL_COR = ifelse(DORSAL_COR == 0, "zero", "not zero")) %>% 
+  group_by(SITE, EXCAVATION, DORSAL_COR) %>% 
+  tally() %>% 
+  filter(!is.na(DORSAL_COR)) %>% 
+  spread(DORSAL_COR, n) %>% 
+  mutate(dorsal_proportion = zero / (`not zero` + zero))
+
+```
+
+```{r}
+ggplot(dorsal_cortex_proportion, aes(SITE, dorsal_proportion)) +
+  geom_boxplot()
+```
+
+## Conclusion
+This report generally came to the same conclusions that Marwick (2013) did in his paper, though the numbers are a little bit different even when using the same dataset. This suggests that only a subset of the data might have been used by Marwick in order to make the claims seem more robust, though the results are not drastically different.  Artifacts from Ban Rai seem to have been more intensively reduced, which Marwick suggests shows a logistical strategy, where as at Tham Lod, a residential strategy was probably practiced. This violated some of the predictions based on ecological models that Marwick made at the beginning of the paper, though this lack of fit between archaeological and ecological models is not unheard of and behavior may not only be for adaptive/functional reasons, instead influenced by cultural or other factors (Bird and O'Connell 2006).
+
+## References cited
+
+Bird, D., O’Connell, J., 2006. Behavioral ecology and archaeology. Journal of Archaeological Research 14, 143–188.
+
+Chitkament, Thanon, Claire Gaillard, and Rasmi Shoocongdej. 2015. "Tham Lod rockshelter (Pang Mapha district, north-western Thailand): Evolution of the lithic assemblages during the late Pleistocene." Quaternary International: 1-11. 
+
+Marwick, B., 2008b. What attributes are important for the measurement of assemblage reduction intensity? results from an experimental stone artefact assemblage with relevance to the Hoabinhian of mainland Southeast Asia.Journal of Archaeological Science 35, 1189–1200.
+
+Marwick, Ben. 2013. “Multiple Optima in Hoabinhian flaked stone artefact paleoeconomics and palaeoecology at two archaeological sites in Northwest Thailand.” Journal of Anthropological Archaeology 32: 553-564.
+
+<!-- don't delete the line below, it will count the words in your report. You will need to do a one-time install of the wordcountaddin package first by running this code in your console: source("https://install-github.me/benmarwick/wordcountaddin") #  -->
+Word count: `r wordcountaddin::word_count()`

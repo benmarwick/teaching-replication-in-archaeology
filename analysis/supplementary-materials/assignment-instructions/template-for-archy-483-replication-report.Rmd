@@ -1,0 +1,36 @@
+---
+title: "Spring 2019 ARCHY 483 Replication Report"
+author: "My Name"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE) # this ensures we can see your code in the output
+```
+
+## Introduction 
+
+## Methods
+
+## Results
+
+```{r read-in-the-data}
+
+```
+
+```{r tidy-the-data}
+
+```
+
+```{r plot-the-data}
+
+```
+
+## Conclusion
+
+## References cited
+
+
+<!-- don't delete the line below, it will count the words in your report. You will need to do a one-time install of the wordcountaddin package first by running this code in your console: source("https://install-github.me/benmarwick/wordcountaddin") #  -->
+Word count: `r wordcountaddin::word_count()`

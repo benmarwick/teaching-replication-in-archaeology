@@ -69,7 +69,7 @@ plot_grid(plot_l,
           rel_heights = c(4, 1))
 
 ggsave(plot = feedback_plots,
-       here::here('analysis/figures/feedback_likert_yn_plot.png'),
+       here::here('analysis/figures/feedback_likert_yn_plot.jpg'),
                   width = 5.75,
        dpi = 300)
 
@@ -89,7 +89,7 @@ feedback_likert_out$results %>%
   theme(axis.text=element_text(size=6))
 
 ggsave(plot = feedback_likert_out_plot,
-       here::here('analysis/figures/feedback_likert_corr.png'),
+       here::here('analysis/figures/feedback_likert_corr.jpg'),
        width = 5.75,
        h = 5.75,
        dpi = 300)

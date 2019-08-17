@@ -1,0 +1,92 @@
+---
+title: "Spring 2019 ARCHY 483 Replication Report"
+author: "Ryan Robinson"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE) # this ensures we can see your code in the output
+```
+
+## Introduction 
+
+The goal of this project was to replicate a portion of Marwick et al.'s study of the stone tool assemblage from Jerimalai (2016). Jerimalai is a site in East Timor with material culture dated to as early as 42,000 years ago. It is an important site for its geographical positioning, which played a role in the dispersal of humans throughout ISEA (Morwood et al., 2005). The authors analyzed the quantitative aspects of Jerimalai's assembalge and concluded that A) there is little change in lithic technology throughout Jerimalai's occupation; B) chert is the dominant lithic resource in use, instead of ISEA-typical pebbles; and C) the assemblage resembles the supposed Homo floresiensis assemblage at nearby Luang Bua.
+
+Here, we focus on claim A from that paper. We obtained Marwick et al’s data and confirmed this claim through an R-based analysis of retouch and platform preparation (overhang removal) patterns over time.  
+
+## Methods
+
+Marwick et al's paper claims that approximately 4-9% of flakes from the assemblage were retouched (Marwick et al., 2016). In our replication, we confirmed that, generating a plot that  shows the proportion of retouched pieces bouncing almost exclusively between 4% and 9%.
+
+To do so, we calculated for the proportion of retouched pieces and compared that figure against spits, the stratigraphic labels that represent time, and displayed the results in a line plot. 
+
+The paper states that the number of pieces with signs of overhang removal (OHR) remained in a steady range for the entirety of Jerimalai's occupation (Marwick et al., 2016). The authors note that the presence of OHR typically signifies complex knapping methods. Their presence at Jerimalai stands at odds with the norm throughout other ISEA sites, which generally have simpler technology (O'Connor er al., 2011) Nonetheless, our analysis confirmed this claim as well. 
+
+Overhang removal is treated similarly to retouch in the original paper. Therefore, we used identical code to generate a new variable ("propoverhang") and display it on a line plot.
+
+## Results
+
+```{r read-in-the-data}
+suppressPackageStartupMessages(library(tidyverse))
+Jerimalai_Square_B_Data <- read_csv("Jerimalai_All_Artefacts_Square_B.csv")
+
+```
+
+
+
+```{r tidy-the-data}
+Jerimalai_proprtch <- Jerimalai_Square_B_Data %>% 
+  group_by(Spit, Rtch) %>% 
+  tally() %>% 
+  spread(Rtch, n) %>% 
+  mutate(No = sum(No, `<NA>`, na.rm = TRUE)) %>% 
+  select(- `<NA>`) %>% 
+  mutate(proprtch = Yes/(Yes + No))
+```
+
+
+
+```{r}
+Jerimalai_propoverhang <- Jerimalai_Square_B_Data %>% 
+  group_by(Spit, Overhang) %>% 
+  tally() %>% 
+  spread(Overhang, n) %>% 
+  mutate(No = sum(No, `<NA>`, na.rm = TRUE)) %>% 
+  select(- `<NA>`) %>% 
+  mutate(propoverhang = Yes/(Yes + No))
+```
+
+
+
+```{r plot-the-data}
+ggplot(Jerimalai_proprtch, 
+       aes(x = Spit, 
+           y = proprtch)) + 
+  geom_line() +
+  ylim(0, 1)
+```
+
+This plot graphs the changes in retouch proportions over time. We can make two observations: first, that the proportion of retouched flakes was always low; and second, that it always remained firmly within its narrow margins. We also see some minor fluctuations in the form of prolonged periods of lower or higher retouch activity, but nothing that breaks the overall pattern.
+
+```{r}
+ggplot(Jerimalai_propoverhang, 
+       aes(x = Spit, 
+           y = propoverhang)) + 
+  geom_line() +
+  ylim(0, 1)
+```
+
+This plot displays variations in OHR practices over Jerimalai's occupation. Like the first plot, we see a relatively stable line, indicating a consistent presence of OHR throughout Jerimalai's past. However, there seems to have been some meaningful changes here. The plot reveals a steady increase in OHR that suddenly drops off around the 12th split. This change does not coincide with anything in the retouch plot, but nonetheless suggests an interesting technological shift.
+
+## Conclusion
+
+We tested the authors' claims regarding the consistency of the lithic technology at Jerimalai over the course of its human occupation, which began 42,000 years ago. We found that their observations are reliable, though it appears that an investigation into the fluctuation of OHR practice may reveal some qualitative information about the site's history. This might be worth exploring in future studies.
+
+## References cited
+
+
+
+source("https://install-github.me/benmarwick/wordcountaddin")
+<!-- don't delete the line below, it will count the words in your report. You will need to do a one-time install of the wordcountaddin package first by running this code in your console: source("https://install-github.me/benmarwick/wordcountaddin") #  -->
+Word count: `r wordcountaddin::word_count()`

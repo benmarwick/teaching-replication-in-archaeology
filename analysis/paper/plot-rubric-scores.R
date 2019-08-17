@@ -74,9 +74,15 @@ scores %>%
   theme_minimal(base_size = 8) +
   coord_flip()
 
-ggsave(plot = rubric_data_plot,
-       here::here('analysis/figures/rubric_score_distribution.png'),
-       width = 5.75)
+ggplot2::ggsave(plot = rubric_data_plot,
+       here::here('analysis/figures/rubric_score_distribution.jpg'),
+       width = 5.75,
+       dpi = 300)
 
+# details on figure size
+# electronically as high-resolution TIFF, EPS, or JPG files for best print reproduction.
+# https://documents.saa.org/container/docs/default-source/doc-publications/style-guide/saa-style-guide_updated-july-2018c5062f7e55154959ab57564384bda7de.pdf?sfvrsn=8247640e_6
+# A minimum of 300 dpi
+# The maximum dimensions of a published figure are 5.75 inches (ca. 15 cm) by 8 inches (20.3 cm).
 
 

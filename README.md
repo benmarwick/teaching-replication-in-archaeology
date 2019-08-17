@@ -30,7 +30,7 @@ Our pre-print is online here:
 
 > Marwick, B., L. Wang, R. Robinson, H. Loiselle , (2019). *How to use
 > replication assignments for teaching integrity in empirical
-> archaeology*. SocArXiv, Accessed 16 Aug 2019. Online at
+> archaeology*. SocArXiv, Accessed 17 Aug 2019. Online at
 > <https://osf.io/preprints/socarxiv/tsxbv>
 
 ### How to cite
@@ -39,7 +39,7 @@ Please cite this compendium as:
 
 > Marwick, B., L. Wang, R. Robinson, H. Loiselle, (2019). *Compendium of
 > R code and data for “How to use replication assignments for teaching
-> integrity in empirical archaeology”*. Accessed 16 Aug 2019. Online at
+> integrity in empirical archaeology”*. Accessed 17 Aug 2019. Online at
 > <https://doi.org/10.17605/OSF.IO/DBSW9>
 
 ## Contents
@@ -54,6 +54,11 @@ The **analysis** directory contains:
   - [:file\_folder: data](/analysis/data): Data used in the analysis.  
   - [:file\_folder: figures](/analysis/figures): Plots and other
     illustrations
+  - [:file\_folder:
+    supplementary-materials](/analysis/supplementary-materials):
+    Supplementary materials including the assignment instructions that
+    we used with the students, and two completed assignments submitted
+    by students in this class.
 
 ## How to run in your broswer or download and run locally
 

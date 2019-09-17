@@ -26,7 +26,7 @@ criteria_short <- c(
 ,"Methods: identify the specific results you will replicate"
 ,"Methods: describe the specific methods that you used to validate these results"
 ,"Results: includes 1-2 original plots & description of these"
-, "Conclusion:state whether the author’s claims appear to be robust, unreliable, etc"
+, "Conclusion: state whether the author’s claims appear to be robust, unreliable, etc"
 , "Style: Use efficient and succinct sentences, no direct quotes"
 , "Style: Use commas and apostrophes correctly, and spell consistently"
 )

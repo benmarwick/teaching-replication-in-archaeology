@@ -14,6 +14,12 @@ feedback_yn <-
   feedback %>%
   select(6, 8)
 
+# add period to every sentence
+feedback_yn_names <- names(feedback_yn)
+feedback_yn_names <- str_remove_all(feedback_yn_names, "\\.")
+feedback_yn_names <-   str_glue('{feedback_yn_names}.')
+names(feedback_yn) <- feedback_yn_names
+
 # extract-likert-scale-questions ---
 feedback_likert <-
   feedback %>%
@@ -29,11 +35,18 @@ for(i in seq_along(feedback_likert)) {
   feedback_likert[,i] <- factor(feedback_likert[,i], levels=mylevels)
 }
 
+# add period to every sentence
+feedback_likert_names <- names(feedback_likert)
+feedback_likert_names <- str_remove_all(feedback_likert_names, "\\.")
+feedback_likert_names <-   str_glue('{feedback_likert_names}.')
+names(feedback_likert) <- feedback_likert_names
+
 
 ## ---- plot-the-feedback-data
 #  plot-likert ---
 require(likert)
 feedback_likert_out <- likert(feedback_likert)
+
 plot_l <- plot(feedback_likert_out,
                wrap = 30,
                text.size = 2,
